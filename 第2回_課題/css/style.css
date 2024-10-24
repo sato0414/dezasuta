@@ -36,6 +36,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: 960px;
+  margin: 0 auto;
 }
 
 .header-left h1{
@@ -50,7 +51,6 @@
 
 .menu li {
   padding: 0 15px;
-  /* position: relative; */
 }
 
 .menu li:not(:last-child){
@@ -67,9 +67,9 @@
     flex-direction: column;
     width: 100%;
   }
-  .menu li {
+  .header .menu li {
     padding: 10px 0;
-    border-right: none !important;
+    border-right: none;
     border-bottom: 1px solid #ccc;
   }
 
