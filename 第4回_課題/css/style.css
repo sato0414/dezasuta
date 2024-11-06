@@ -1,0 +1,250 @@
+body {
+    background-color: #E8D9BF;
+}
+
+/* ヘッダーの設定 */
+.header_slider {
+    position: relative;
+}
+
+.header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7% 0 3%;
+    position: absolute;/*これをつけると、横幅の指定がなくなる */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;/* box-sizingはpaddingだけ(要素内だけ) */
+}
+
+.pc_nav ul {
+    display: flex;
+    gap: 53px;
+}
+
+.pc_nav ul li {
+    color: white;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    width: 105px;
+    text-align: center;
+}
+
+.header_logo {
+    width: 226px;
+}
+
+a {
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+/* コンテンツ全体の設定 */
+.mainContent {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* メッセージセクション */
+.message_sec {
+    margin-top: 104px;
+    text-align: center;
+}
+
+.message_sec h4 {
+    font-size: 30px;
+}
+
+.message_sec h3 {
+    margin-top: 47px;
+    margin-bottom: 21px;
+    font-size: 82px;
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+}
+
+.message_sec p {
+    font-size: 23px;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+}
+
+/* ABOUT USセクション */
+.aboutUs_sec {
+    display: flex;
+    margin-top: 93px;
+    gap: 78px;
+    text-align: left;
+}
+
+.coffee_pic {
+    border-radius: 0 0 82px 0;
+    width: 500px;
+    height: 560px;
+    object-fit: cover;
+}
+
+.box_1 {
+    margin-top: 57px;
+}
+
+.subTitle {
+    height: 77px;
+}
+
+.box_1 h3 {
+    font-size: 44px;
+    line-height: 1.4;
+    margin: 47px 0 23px 0;
+}
+
+.box_1 p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 0 10px;
+}
+
+/* MENUセクション */
+.menu_sec {
+    margin-top: 96px;
+}
+
+.menu_sec h2 {
+    text-align: center;
+    margin-bottom: 39px;
+}
+
+.container_2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box_2 {
+    position: relative;
+}
+
+.box_2 img {
+    border-radius: 0 41px 0 0;
+    width: 100%;
+}
+
+.box_2 h3 {
+    font-size: 38px;
+    color: #D30202;
+    line-height: 0.6;
+    position: absolute;
+    top: 195px;
+    box-sizing: border-box
+}
+
+.box_2 p {
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 300px;
+    margin-top: 44px;
+}
+
+/* GALLERYセクション */
+.gallery_sec {
+    margin-top: 82px;
+}
+
+.gallery_sec h2 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.container_3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container_3 img {
+    width: 100%;
+    max-width: 384px;
+}
+
+/* EVENTセクション */
+.event_sec {
+    margin-top: 60px;
+}
+
+.event_sec h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.event {
+    background-color: white;
+    padding: 39px 164px 39px 159px;
+    border: 4px solid #4F260B;
+    font-size: 23px;
+}
+
+.event div {
+    display: flex;
+    gap: 46px;
+}
+
+.event_date {
+    line-height: 2;
+}
+
+.event_detail {
+    /* border-bottom:2px solid #4F260B; */
+    line-height: 2;
+}
+
+/* ACCESSセクション */
+.access_sec {
+    margin-top: 70px;
+}
+
+.access_sec h2 {
+    text-align: center;
+    margin-bottom: 37px;
+}
+
+.access_sec iframe {
+    display: block;/* ←なんのために入れているのかがよくわからないです */
+    width: 100%;
+    height: 470px;
+}
+
+/* footerの設定 */
+footer {
+    background-color: white;
+    padding-top: 75px;
+}
+
+.footer_sec {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: flex-start;
+}
+
+footer img {
+    height: 50px;
+    width: auto;
+}
+
+.footer_sec p {
+    font-size: 20px;
+    margin-left: 65px;
+    margin-bottom: 73px;
+    line-height: 2;
+}
+
+.copyright {
+    text-align: center;
+}
