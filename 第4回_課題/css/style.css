@@ -2,6 +2,17 @@ body {
     background-color: #E8D9BF;
 }
 
+/* pageUpボタン */
+.pageUpBtn {
+    position: fixed;
+    bottom: 230px;
+    right: 16%;
+    width: 125px;
+    height: 125px;
+    z-index: 100;
+    cursor: pointer;
+}
+
 /* ヘッダーの設定 */
 .header_slider {
     position: relative;
@@ -12,11 +23,13 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 7% 0 3%;
-    position: absolute;/*これをつけると、横幅の指定がなくなる */
+    position: absolute;
+    /*これをつけると、横幅の指定がなくなる */
     top: 0;
     left: 0;
     width: 100%;
-    box-sizing: border-box;/* box-sizingはpaddingだけ(要素内だけ) */
+    box-sizing: border-box;
+    /* box-sizingはpaddingだけ(要素内だけ) */
 }
 
 .pc_nav ul {
@@ -42,7 +55,7 @@ a {
     transition: 0.3s;
 }
 
-a:hover {
+a:hover{
     opacity: 0.5;
 }
 
@@ -58,11 +71,11 @@ a:hover {
     text-align: center;
 }
 
-.message_sec h4 {
+.message_en {
     font-size: 30px;
 }
 
-.message_sec h3 {
+.message_ja {
     margin-top: 47px;
     margin-bottom: 21px;
     font-size: 82px;
@@ -71,7 +84,7 @@ a:hover {
     letter-spacing: 0.1em;
 }
 
-.message_sec p {
+.message_detail {
     font-size: 23px;
     line-height: 1.7;
     letter-spacing: 0.1em;
@@ -80,6 +93,9 @@ a:hover {
 /* ABOUT USセクション */
 .aboutUs_sec {
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 10px 0 0;
     margin-top: 93px;
     gap: 78px;
     text-align: left;
@@ -87,30 +103,30 @@ a:hover {
 
 .coffee_pic {
     border-radius: 0 0 82px 0;
-    width: 500px;
-    height: 560px;
+    width: 50%;
+    aspect-ratio: 25 / 28;
     object-fit: cover;
 }
 
 .box_1 {
     margin-top: 57px;
+    width: 41%;
 }
 
 .subTitle {
     height: 77px;
 }
 
-.box_1 h3 {
+.aboutUs_message {
     font-size: 44px;
     line-height: 1.4;
     margin: 47px 0 23px 0;
 }
 
-.box_1 p {
+.aboutUs_detail {
     font-size: 16px;
     line-height: 1.6;
     text-align: justify;
-    padding: 0 10px;
 }
 
 /* MENUセクション */
@@ -129,12 +145,15 @@ a:hover {
 }
 
 .box_2 {
+    width: 30%;
+}
+
+.box_2 div {
     position: relative;
 }
 
 .box_2 img {
     border-radius: 0 41px 0 0;
-    width: 100%;
 }
 
 .box_2 h3 {
@@ -142,7 +161,7 @@ a:hover {
     color: #D30202;
     line-height: 0.6;
     position: absolute;
-    top: 195px;
+    top: 95%;
     box-sizing: border-box
 }
 
@@ -150,7 +169,7 @@ a:hover {
     font-size: 17px;
     line-height: 1.5;
     max-width: 300px;
-    margin-top: 44px;
+    margin-top: 45px;
 }
 
 /* GALLERYセクション */
@@ -169,8 +188,7 @@ a:hover {
 }
 
 .container_3 img {
-    width: 100%;
-    max-width: 384px;
+    width: 20%;
 }
 
 /* EVENTセクション */
@@ -185,14 +203,18 @@ a:hover {
 
 .event {
     background-color: white;
-    padding: 39px 164px 39px 159px;
     border: 4px solid #4F260B;
     font-size: 23px;
 }
 
-.event div {
+.event_about {
+    width: 668px;
+    margin: 42px auto;
+}
+
+.event_about div {
     display: flex;
-    gap: 46px;
+    gap: 6%;
 }
 
 .event_date {
@@ -200,7 +222,6 @@ a:hover {
 }
 
 .event_detail {
-    /* border-bottom:2px solid #4F260B; */
     line-height: 2;
 }
 
@@ -215,9 +236,10 @@ a:hover {
 }
 
 .access_sec iframe {
-    display: block;/* ←なんのために入れているのかがよくわからないです */
+    display: block;
     width: 100%;
     height: 470px;
+    border: none;
 }
 
 /* footerの設定 */
@@ -235,16 +257,21 @@ footer {
 
 footer img {
     height: 50px;
-    width: auto;
 }
 
-.footer_sec p {
+.information p {
     font-size: 20px;
-    margin-left: 65px;
-    margin-bottom: 73px;
     line-height: 2;
 }
 
-.copyright {
+.information {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    margin-bottom: 79px;
+}
+
+.copy {
     text-align: center;
+    padding-bottom: 78px;
 }

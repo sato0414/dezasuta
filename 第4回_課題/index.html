@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DESIGN CCAFE</title>
+    <title>DESIGN CAFE</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -14,7 +14,7 @@
     <header>
         <div class="header_slider">
             <div>
-                <img src="./images/pc_first-100.jpg" alt="店内の様子">
+                <img src="./images/pc_first-100.jpg" alt="店内の様子" id="header">
             </div>
             <div class="header-wrap">
                 <h1 class="header_logo">
@@ -22,85 +22,97 @@
                 </h1>
                 <nav class="pc_nav">
                     <ul>
-                        <li><a href="">ABOUT US</a></li>
-                        <li><a href="">MENU</a></li>
-                        <li><a href="">GALLERY</a></li>
-                        <li><a href="">EVENT</a></li>
-                        <li><a href="">ACCESS</a></li>
+                        <li><a href="#aboutUs">ABOUT US</a></li>
+                        <li><a href="#menu">MENU</a></li>
+                        <li><a href="#gallery">GALLERY</a></li>
+                        <li><a href="#event">EVENT</a></li>
+                        <li><a href="#access">ACCESS</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
+
+    <a href="#header"><img src="./images/to_top@2x.png" alt="Page Up" class="pageUpBtn"></a>
+
     <div class="mainContent">
         <section class="message_sec">
-            <h4>Have a happy day From a cup of coffee.<h4>
-                    <h3>ハッピーに溢れる1日を<br>1杯のコーヒーから。</h3>
-                    <p>毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ<br>
-                        足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
+            <p class="message_en">Have a happy day From a cup of coffee.</p>
+            <p class="message_ja">ハッピーに溢れる1日を<br>1杯のコーヒーから。</p>
+            <p class="message_detail">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ<br>
+                足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
         </section>
-        <section class="aboutUs_sec">
+        <section class="aboutUs_sec" id="aboutUs">
             <img src="./images/about_us@2x-100.jpg" alt="coffee" class="coffee_pic">
             <div class="box_1">
                 <h2><img src="./images/about_us@2x.png" alt="ABOUT US" class="subTitle"></h2>
-                <h3>私たちが提供する<br>こだわりのコーヒー</h3>
-                <p>サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+                <p class="aboutUs_message">私たちが提供する<br>こだわりのコーヒー</p>
+                <p class="aboutUs_detail">
+                    サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
                 </p>
             </div>
         </section>
-        <section class="menu_sec">
+        <section class="menu_sec" id="menu">
             <h2><img src="./images/menu@2x.png" alt="MENU" class="subTitle"></h2>
             <div class="container_2">
                 <div class="box_2">
-                    <img src="images/pc_menu_drink-100.jpg" alt="drink">
-                    <h3>Drink</h3>
+                    <div>
+                        <img src="images/pc_menu_drink-100.jpg" alt="drink">
+                        <h3>Drink</h3>
+                    </div>
                     <p>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
                 </div>
                 <div class="box_2">
-                    <img src="images/pc_menu_food-100.jpg" alt="food">
-                    <h3>Food</h3>
+                    <div>
+                        <img src="images/pc_menu_food-100.jpg" alt="food">
+                        <h3>Food</h3>
+                    </div>
                     <p>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
                 </div>
 
                 <div class="box_2">
-                    <img src="images/pc_menu_sweets-100.jpg" alt="sweets">
-                    <h3>Sweets</h3>
+                    <div>
+                        <img src="images/pc_menu_sweets-100.jpg" alt="sweets">
+                        <h3>Sweets</h3>
+                    </div>
                     <p>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
                 </div>
             </div>
         </section>
     </div>
-    <section class="gallery_sec">
+    <section class="gallery_sec" id="gallery">
         <h2><img src="./images/gallery@2x.png" alt="GALLERY" class="subTitle"></h2>
         <div class="container_3">
-            <img src="./images/pc_gallary_05-100.jpg" alt="pc_gallary_05">
-            <img src="./images/pc_gallary_04-100.jpg" alt="pc_gallary_04">
-            <img src="./images/pc_gallary_03-100.jpg" alt="pc_gallary_03">
-            <img src="./images/pc_gallary_02-100.jpg" alt="pc_gallary_02">
-            <img src="./images/pc_gallary_01-100.jpg" alt="pc_gallary_01">
+            <img src="./images/pc_gallary_05-100.jpg" alt="pc_gallery_05">
+            <img src="./images/pc_gallary_04-100.jpg" alt="pc_gallery_04">
+            <img src="./images/pc_gallary_03-100.jpg" alt="pc_gallery_03">
+            <img src="./images/pc_gallary_02-100.jpg" alt="pc_gallery_02">
+            <img src="./images/pc_gallary_01-100.jpg" alt="pc_gallery_01">
         </div>
     </section>
     <div class="mainContent">
-        <section class="event_sec">
+        <section class="event_sec" id="event">
             <h2><img src="./images/event@2x.png" alt="EVENT" class="subTitle"></h2>
             <div class="event">
-                <div>
-                    <p class="event_date">2020.06.23</p>
-                    <a href="" class="event_detail">7月はイベント出店のため0/0お休みします</a>
-                </div>
-                <div>
-                    <p class="event_date">2020.03.15</p>
-                    <a href="" class="event_detail">春の新商品新発売。話題のあのブランドとコラボ</a>
-                </div>
-                <div>
-                    <p class="event_date">2020.02.06</p>
-                    <a href="" class="event_detail">コーヒーの日で30％OFFイベントを開催［3日間限定］</a>
+                <div class="event_about">
+                    <div>
+                        <p class="event_date">2020.06.23</p>
+                        <a href="" class="event_detail">7月はイベント出店のため0/0お休みします</a>
+                    </div>
+                    <div>
+                        <p class="event_date">2020.03.15</p>
+                        <a href="" class="event_detail">春の新商品新発売。話題のあのブランドとコラボ</a>
+                    </div>
+                    <div>
+                        <p class="event_date">2020.02.06</p>
+                        <a href="" class="event_detail">コーヒーの日で30％OFFイベントを開催［3日間限定］</a>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-    <section class="access_sec">
+    <section class="access_sec" id="access">
         <h2><img src="./images/access@2x.png" alt="ACCESS" class="subTitle"></h2>
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.1035163952924!2d139.32295243488764!3d35.87097999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601927c151ec1855%3A0x2e5a1089dd9bed02!2z44Og44O844Of44Oz44OQ44Os44O844OR44O844Kv!5e0!3m2!1sja!2sjp!4v1730887183354!5m2!1sja!2sjp"
@@ -109,12 +121,14 @@
     <footer>
         <div class="footer_sec">
             <img src="./images/design_cafe_logo_footer@2x.png" alt="ロゴ">
-            <p>OPEN 18:00 / CLOSE 24:00<br>
-                〒150-0022<br>
-                東京都渋谷区東京南123デザインビルB1<br>
-                MAIL：info@designcafe.tokyo</p>
+            <div class="information">
+                <p>OPEN 18:00 / CLOSE 24:00</p>
+                <p>〒150-0022</p>
+                <p>東京都渋谷区東京南123デザインビルB1</p>
+                <p>MAIL：info@designcafe.tokyo</p>
+            </div>
         </div>
-        <p class="copyright">© 2021 DESIGN CAFE</p>
+        <p class="copy">&copy; 2021 DESIGN CAFE</p>
     </footer>
 </body>
 
