@@ -1,3 +1,8 @@
+/* ゆっくり遷移する */
+html {
+	scroll-behavior: smooth;
+}
+
 body {
     background-color: #E8D9BF;
 }
@@ -5,8 +10,8 @@ body {
 /* pageUpボタン */
 .pageUpBtn {
     position: fixed;
-    bottom: 230px;
-    right: 16%;
+    bottom: 5%;
+    right: 5%;
     width: 125px;
     height: 125px;
     z-index: 100;
@@ -55,7 +60,7 @@ a {
     transition: 0.3s;
 }
 
-a:hover{
+a:hover {
     opacity: 0.5;
 }
 
@@ -67,6 +72,7 @@ a:hover{
 
 /* メッセージセクション */
 .message_sec {
+    padding: 0 10px;
     margin-top: 104px;
     text-align: center;
 }
@@ -76,18 +82,23 @@ a:hover{
 }
 
 .message_ja {
-    margin-top: 47px;
-    margin-bottom: 21px;
     font-size: 82px;
     font-weight: normal;
     line-height: 1.2;
     letter-spacing: 0.1em;
+    max-width: 885px;
+    margin: 47px auto 21px auto;
+    text-align: center;
 }
 
 .message_detail {
     font-size: 23px;
     line-height: 1.7;
     letter-spacing: 0.1em;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+
 }
 
 /* ABOUT USセクション */
@@ -95,7 +106,7 @@ a:hover{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 0 10px 0 0;
+    padding: 0 10px;
     margin-top: 93px;
     gap: 78px;
     text-align: left;
@@ -121,6 +132,7 @@ a:hover{
     font-size: 44px;
     line-height: 1.4;
     margin: 47px 0 23px 0;
+    max-width: 360px;
 }
 
 .aboutUs_detail {
@@ -131,6 +143,7 @@ a:hover{
 
 /* MENUセクション */
 .menu_sec {
+    padding: 0 10px;
     margin-top: 96px;
 }
 
@@ -223,6 +236,7 @@ a:hover{
 
 .event_detail {
     line-height: 2;
+    text-decoration:underline;
 }
 
 /* ACCESSセクション */
