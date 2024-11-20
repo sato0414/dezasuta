@@ -1,0 +1,603 @@
+/* ゆっくり遷移する */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #E8D9BF;
+}
+
+/* pageUpボタン */
+.pageUpBtn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* ヘッダーの設定 */
+.header_slider {
+    position: relative;
+}
+
+.header_slider img {
+    width: 100%;
+}
+
+.header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7% 0 3%;
+    position: absolute;
+    /*これをつけると、横幅の指定がなくなる */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    /* box-sizingはpaddingだけ(要素内だけ) */
+}
+
+/* PC版メニュー */
+.pc_nav ul {
+    display: flex;
+    gap: 53px;
+}
+
+.pc_nav ul li {
+    color: white;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    width: 105px;
+    text-align: center;
+}
+
+/* スマホ版メニュー */
+.sp_nav,
+.sp_btn {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .pc_nav {
+        display: none;
+    }
+
+    .sp_btn {
+        display: block;
+        height: 23px;
+        cursor: pointer;
+        position: absolute;
+        /* 画面全体に対して */
+        top: 21px;
+        right: 25px;
+        z-index: 200;
+    }
+
+    .sp_btn span {
+        display: block;
+        width: 33px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 2px;
+        /* 位置の調整 */
+        position: relative;
+        top: 10px;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before,
+    .sp_btn span::after {
+        content: "";
+        display: block;
+        width: 33px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 2px;
+        /* 位置の調整 */
+        position: absolute;
+        transition: 0.3s;
+    }
+
+    /* 位置の調整 */
+    .sp_btn span::before {
+        bottom: 10px;
+    }
+
+    .sp_btn span::after {
+        top: 10px;
+    }
+
+    /* バツ印 */
+    /* 両方のクラス (sp_btn と open) が同時に指定された要素だけにスタイルを適用。 */
+    .sp_btn.open span {
+        background: transparent;
+        /* 親要素である真ん中の線を透明にする */
+    }
+
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+        /* 回転させる */
+    }
+
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+        /* 回転させる */
+    }
+
+    /* メニューの見た目 */
+    .sp_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 100;
+    }
+
+    .sp_nav ul li {
+        color: #fff;
+        font-size: 18px;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+            "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    }
+
+    .sp_nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 40px;
+    }
+
+    /* フォントサイズ変更 */
+    .mainContent .message_sec {
+        margin: 41px 0 66px 0;
+    }
+
+    .message_sec .message_en {
+        font-size: 17px;
+    }
+
+    .message_sec .message_ja {
+        font-size: 38px;
+        line-height: 1.15;
+        margin: 25px auto;
+        letter-spacing: 0.02em;
+    }
+
+    .message_sec .message_detail {
+        font-size: 16px;
+        line-height: 1.87;
+    }
+
+    .aboutUs_sec .aboutUs_message {
+        font-size: 36px;
+        line-height: 1.25;
+    }
+}
+
+.header_logo {
+    width: 226px;
+}
+
+a {
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+/* コンテンツ全体の設定 */
+.mainContent {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* メッセージセクション */
+.message_sec {
+    padding: 0 10px;
+    margin-top: 104px;
+    text-align: center;
+}
+
+.message_en {
+    font-size: 30px;
+}
+
+.message_ja {
+    font-size: 82px;
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    max-width: 885px;
+    margin: 47px auto 21px auto;
+    text-align: center;
+}
+
+.message_detail {
+    font-size: 23px;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+/* ABOUT USセクション */
+.aboutUs_sec {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 93px;
+    gap: 78px;
+    text-align: left;
+}
+
+.coffee_pic {
+    border-radius: 0 0 82px 0;
+    width: 50%;
+    aspect-ratio: 25 / 28;
+    object-fit: cover;
+}
+
+.box_1 {
+    margin-top: 57px;
+    width: 41%;
+}
+
+.subTitle {
+    height: 77px;
+}
+
+.aboutUs_message {
+    font-size: 44px;
+    line-height: 1.4;
+    margin: 47px 0 23px 0;
+    max-width: 360px;
+}
+
+.aboutUs_detail {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* MENUセクション */
+.menu_sec {
+    padding: 0 10px;
+    margin-top: 96px;
+}
+
+.menu_sec h2 {
+    text-align: center;
+    margin-bottom: 39px;
+}
+
+.container_2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box_2 {
+    width: 30%;
+}
+
+.box_2 div {
+    position: relative;
+}
+
+.box_2 img {
+    border-radius: 0 41px 0 0;
+}
+
+.box_2 h3 {
+    font-size: 38px;
+    color: #D30202;
+    line-height: 0.6;
+    position: absolute;
+    top: 95%;
+    box-sizing: border-box
+}
+
+.box_2 p {
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 300px;
+    margin-top: 45px;
+}
+
+/* GALLERYセクション */
+.gallery_sec {
+    margin-top: 82px;
+}
+
+.desktop-only {
+    display: flex;
+    justify-content: space-between;
+}
+
+.desktop-only img {
+    width: 20%;
+}
+
+/* デフォルトでモバイル画像は非表示 */
+.mobile-only {
+    display: none;
+}
+
+.gallery_sec h2 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+
+/* EVENTセクション */
+.event_sec {
+    padding: 0 10px;
+    margin-top: 60px;
+}
+
+.event_sec h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.event {
+    background-color: white;
+    border: 4px solid #4F260B;
+    font-size: 23px;
+}
+
+.event_about {
+    width: 668px;
+    margin: 42px auto;
+}
+
+.event_about div {
+    display: flex;
+    gap: 6%;
+}
+
+.event_date {
+    line-height: 2;
+}
+
+.event_detail {
+    line-height: 2;
+    text-decoration: underline;
+}
+
+/* ACCESSセクション */
+.access_sec {
+    margin-top: 70px;
+}
+
+.access_sec h2 {
+    text-align: center;
+    margin-bottom: 37px;
+}
+
+.access_sec iframe {
+    display: block;
+    width: 100%;
+    height: 470px;
+    border: none;
+}
+
+/* footerの設定 */
+footer {
+    background-color: white;
+    padding-top: 75px;
+}
+
+.footer_sec {
+    padding: 0 10px;
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: flex-start;
+}
+
+footer img {
+    height: 50px;
+}
+
+.information p {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    margin-bottom: 79px;
+}
+
+.copy {
+    text-align: center;
+    padding-bottom: 78px;
+}
+
+@media screen and (max-width: 767px) {
+    .subTitle {
+        height: 45px;
+    }
+
+    /* About Usセクション */
+    .aboutUs_sec {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        gap: 0;
+        align-items: center;
+    }
+
+    .aboutUs_sec h2 {
+        order: 1;
+        /* 最初に表示される */
+        margin-bottom: 17px;
+    }
+
+    .coffee_pic {
+        border-radius: 0px;
+        width: 100%;
+        aspect-ratio: 0;
+        order: 2;
+    }
+
+    /* divタグをないことにする */
+    .aboutUs_sec .box_1 {
+        display: contents;
+    }
+
+    .aboutUs_sec .box_1 .aboutUs_message {
+        max-width: 100%;
+        padding: 0 14% 0 10px;
+        margin: 37px 0 32px 0;
+        order: 3;
+    }
+
+    .aboutUs_detail {
+        padding: 0 10px;
+        order: 4;
+    }
+
+    /* Menuセクション */
+    .menu_sec {
+        padding: 0;
+        margin-top: 57px;
+    }
+
+    .container_2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .container_2 .box_2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 57px;
+    }
+
+    .box_2 h3 {
+        font-size: 40px;
+    }
+
+    .container_2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+    }
+
+    .box_2 p {
+        line-height: 1.6;
+        max-width: 100%;
+        margin-top: 53px;
+    }
+
+    /* GALLERYセクション */
+    .gallery_sec {
+        margin: 0;
+    }
+
+    .container_3 .desktop-only {
+        display: none;
+    }
+
+    .container_3 .mobile-only {
+        /* 最初の画像だけ表示 */
+        display: block;
+    }
+
+    .container_3 img {
+        width: 100%;
+    }
+
+    .container_3 {
+        display: block;
+    }
+
+    /* eventセクション */
+    .event_sec {
+        width: 100%;
+        margin-top: 34px;
+        padding: 0;
+    }
+
+    .event {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .event_about {
+        width: 90%;
+    }
+
+    .event_about div {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Accessセクション */
+    .access_sec {
+        margin-top: 34px;
+    }
+
+    .access_sec h2 {
+        margin-bottom: 10px;
+    }
+
+    /* footerセクション */
+    footer {
+        padding-top: 48px;
+    }
+
+    .footer_sec {
+        display: block;
+        padding: 0 10px 0 20px;
+    }
+
+    .footer_sec img {
+        height: 37px;
+        margin-bottom: 32px;
+    }
+
+    .footer_sec .information {
+        margin: 0 auto;
+    }
+
+    .information p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    footer .copy {
+        margin-top: 43px;
+        padding-bottom: 33px;
+    }
+
+}
