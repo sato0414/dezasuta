@@ -56,14 +56,15 @@
     <div class="mainContent">
         <section class="message_sec">
             <p class="message_en">Have a happy day From a cup of coffee.</p>
-            <p class="message_ja">ハッピーに溢れる1日を1杯のコーヒーから。</p>
-            <p class="message_detail">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ<br>足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
+            <p class="message_ja"><span class="br_span">ハッピーに溢れる1日を</span><span class="br_span">1杯のコーヒーから。</span></p>
+            <p class="message_detail"><span class="br_span">毎日を丁寧に大切に過ごしたい。</span>だからこそ一杯一杯丁寧にコーヒーを入れ<br><span
+                    class="br_span">足を運んでくれるお客さんには落ち着く空間と</span>こだわりのコーヒーを提供したい。</p>
         </section>
         <section class="aboutUs_sec" id="aboutUs">
             <img src="./images/about_us@2x-100.jpg" alt="coffee" class="coffee_pic">
             <div class="box_1">
                 <h2><img src="./images/about_us@2x.png" alt="ABOUT US" class="subTitle"></h2>
-                <p class="aboutUs_message">私たちが提供するこだわりのコーヒー</p>
+                <p class="aboutUs_message"><span class="br_span">私たちが提供する</span>こだわりのコーヒー</p>
                 <p class="aboutUs_detail">
                     サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
                 </p>
@@ -170,16 +171,29 @@
 
     <script>
         $(function () {
+            // ハンバーガーメニューをクリックしたとき
             $('.sp_btn').on('click', function () {
+                // メニューを開く/閉じる
                 $('.sp_btn').toggleClass('open');
                 $('.sp_nav').fadeToggle();
-            })
-        })
-    </script>
 
+                // メニューが開いている場合はスクロール無効化、閉じる場合は有効化
+                if ($('.sp_btn').hasClass('open')) {
+                    $('body').addClass('no-scroll');
+                } else {
+                    $('body').removeClass('no-scroll');
+                }
+            });
+
+            // メニュー内のリンクをクリックしたとき
+            $('.sp_nav a').on('click', function () {
+                // メニューを閉じてスクロールを有効化
+                $('.sp_btn').removeClass('open');
+                $('.sp_nav').fadeOut();
+                $('body').removeClass('no-scroll');
+            });
+        });
+    </script>
 </body>
 
 </html>
-
-<!-- ハンバーガーメニューを開いているときは、スクロールさせない
-リンクにとんだら、ハンバーガーメニューは閉じる -->

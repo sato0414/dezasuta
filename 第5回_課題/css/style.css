@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /* ゆっくり遷移する */
 html {
     scroll-behavior: smooth;
@@ -6,6 +8,8 @@ html {
 body {
     background-color: #E8D9BF;
 }
+
+
 
 /* pageUpボタン */
 .pageUpBtn {
@@ -113,6 +117,11 @@ body {
         top: 10px;
     }
 
+    /* スクロール無効化 */
+    .no-scroll {
+        overflow: hidden;
+    }
+
     /* バツ印 */
     /* 両方のクラス (sp_btn と open) が同時に指定された要素だけにスタイルを適用。 */
     .sp_btn.open span {
@@ -178,11 +187,18 @@ body {
     .message_sec .message_detail {
         font-size: 16px;
         line-height: 1.87;
+        max-width: 350px;
     }
 
     .aboutUs_sec .aboutUs_message {
         font-size: 36px;
         line-height: 1.25;
+    }
+
+    /* 改行の追加 */
+    .br_span {
+        display: block;
+        /* 改行 */
     }
 }
 
@@ -283,7 +299,7 @@ a:hover {
 
 .menu_sec h2 {
     text-align: center;
-    margin-bottom: 39px;
+    margin-bottom: 23px;
 }
 
 .container_2 {
@@ -352,7 +368,7 @@ a:hover {
 
 .event_sec h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .event {
@@ -444,6 +460,7 @@ footer img {
         padding: 0px;
         gap: 0;
         align-items: center;
+        margin-top: 65px;
     }
 
     .aboutUs_sec h2 {
@@ -465,15 +482,20 @@ footer img {
     }
 
     .aboutUs_sec .box_1 .aboutUs_message {
+        /* 親要素の幅を基準に、子要素が幅いっぱいに広がる */
         max-width: 100%;
-        padding: 0 14% 0 10px;
+        width: 90%;
         margin: 37px 0 32px 0;
+        /* HTMLの記述順に依存せず、スタイリングで順序を柔軟に変更したい場合に使用 */
         order: 3;
+        /* border-box → 幅（width）や高さ（height）に、paddingやborderを含める */
+        box-sizing: border-box;
     }
 
     .aboutUs_detail {
         padding: 0 10px;
         order: 4;
+        width: 90%;
     }
 
     /* Menuセクション */
@@ -501,6 +523,7 @@ footer img {
 
     .box_2 h3 {
         font-size: 40px;
+        padding: 0 3%;
     }
 
     .container_2 {
@@ -549,10 +572,13 @@ footer img {
     .event {
         width: 90%;
         margin: 0 auto;
+        height: 200px;
     }
 
     .event_about {
         width: 90%;
+        margin: 20px auto;
+        font-size: 16px;
     }
 
     .event_about div {
@@ -560,6 +586,11 @@ footer img {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        margin-bottom: 5px;
+    }
+
+    .event_about div p {
+        height: 20px;
     }
 
     /* Accessセクション */
@@ -569,6 +600,10 @@ footer img {
 
     .access_sec h2 {
         margin-bottom: 10px;
+    }
+
+    .access_sec iframe {
+        height: 190px;
     }
 
     /* footerセクション */
@@ -582,7 +617,7 @@ footer img {
     }
 
     .footer_sec img {
-        height: 37px;
+        height: 50px;
         margin-bottom: 32px;
     }
 
