@@ -169,29 +169,19 @@ body {
     }
 
     /* フォントサイズ変更 */
-    .mainContent .message_sec {
-        margin: 41px 0 66px 0;
-    }
-
-    .message_sec .message_en {
-        font-size: 17px;
-    }
-
     .message_sec .message_ja {
-        font-size: 38px;
+        font-size: 70px;
         line-height: 1.15;
         margin: 25px auto;
         letter-spacing: 0.02em;
     }
 
-    .message_sec .message_detail {
-        font-size: 16px;
-        line-height: 1.87;
-        max-width: 350px;
+    .mainContent .message_sec {
+        margin: 104px 0 66px 0;
     }
 
     .aboutUs_sec .aboutUs_message {
-        font-size: 36px;
+        font-size: 38px;
         line-height: 1.25;
     }
 
@@ -340,18 +330,45 @@ a:hover {
     margin-top: 82px;
 }
 
-.desktop-only {
-    display: flex;
-    justify-content: space-between;
+.gallery_slider img {
+    width: 100%;
 }
 
-.desktop-only img {
-    width: 20%;
+/* モーダルウィンドウのタイトル部分を削除 */
+.lb-data .lb-number {
+    display: none !important;
 }
 
-/* デフォルトでモバイル画像は非表示 */
-.mobile-only {
-    display: none;
+/* スライドショーの矢印 */
+.slick-next {
+    right: 22%;
+}
+
+.slick-prev {
+    left: 22%;
+    z-index: 10;
+}
+
+.slick-next:before {
+    content: "";
+    display: block;
+    /* :beforeはインライン要素だからブロック要素に変換する */
+    /* インライン要素はheightとかが効かない！ */
+    width: 10px;
+    height: 10px;
+    border-top: 4px solid white;
+    border-right: 4px solid white;
+    transform: rotate(45deg);
+}
+
+.slick-prev:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 4px solid white;
+    border-right: 4px solid white;
+    transform: rotate(225deg);
 }
 
 .gallery_sec h2 {
@@ -453,6 +470,39 @@ footer img {
         height: 45px;
     }
 
+    /* messageセクション */
+    .mainContent .message_sec {
+        margin: 41px 0 66px 0;
+    }
+
+    .message_sec .message_en {
+        font-size: 17px;
+    }
+
+    .message_sec .message_ja {
+        font-size: 38px;
+        line-height: 1.15;
+        margin: 25px auto;
+        letter-spacing: 0.02em;
+    }
+
+    .message_sec .message_detail {
+        font-size: 16px;
+        line-height: 1.87;
+        max-width: 350px;
+    }
+
+    .aboutUs_sec .aboutUs_message {
+        font-size: 36px;
+        line-height: 1.25;
+    }
+
+    /* 改行の追加 */
+    .br_span2 {
+        display: block;
+        /* 改行 */
+    }
+
     /* About Usセクション */
     .aboutUs_sec {
         display: flex;
@@ -545,21 +595,23 @@ footer img {
         margin: 0;
     }
 
-    .container_3 .desktop-only {
-        display: none;
-    }
-
-    .container_3 .mobile-only {
-        /* 最初の画像だけ表示 */
-        display: block;
-    }
-
     .container_3 img {
         width: 100%;
     }
 
     .container_3 {
         display: block;
+    }
+
+    /* スライドショーの矢印の調整 */
+    /* スライドショーの矢印 */
+    .slick-next {
+        right: 7%;
+    }
+
+    .slick-prev {
+        left: 7%;
+        z-index: 10;
     }
 
     /* eventセクション */
@@ -634,5 +686,18 @@ footer img {
         margin-top: 43px;
         padding-bottom: 33px;
     }
+}
 
+/* スライドショー */
+.slick-dots {
+    bottom: 20px;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li button:before {
+    color: #fff;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
 }
